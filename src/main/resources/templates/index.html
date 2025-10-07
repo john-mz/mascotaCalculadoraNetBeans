@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en" xlmns:th="https://thymeleaf.org">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+    <body>
+        <h1 th:text="${Orejas}"></h1>
+        <h1 th:text="${Cara}"></h1>
+        <h1 th:text="${Patas}"></h1>
+        <h1 th:text="${Mensaje}"></h1>
+        <form action="" th:action="@{/calcular}" th:object="${OperacionDTO}" method="POST">
+            <input type="number" th:field="*{numero1}" placeholder="Numero 1" class="form-control mb-2"/>
+            <input type="number" th:field="*{numero2}" placeholder="Numero 2" class="form-control mb-2"/>
+            <select th:field="*{operacion}" class="form-select mb-2">
+                <option value="suma">suma</option>
+                <option value="resta">resta</option>
+                <option value="multiplicacion">multiplicacion</option>
+                <option value="division">Division</option>
+            </select>
+            <button type="submit" class="btn btn-primary">Calcular</button>
+        </form>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</html>
